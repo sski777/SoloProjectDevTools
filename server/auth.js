@@ -13,3 +13,5 @@ export const checkJwt = jwt({
   issuer: 'https://'+domain+'/',
   algorithms: ['RS256']
 });
+
+// edit for commit

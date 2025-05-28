@@ -6,7 +6,13 @@ import RouteTrackActivity from './Routes/RouteTrackActivity.js'
 const server = express()
 // change a line for .env update
 
-server.use(cors())
+server.use(helmet())
+
+server.use(cors({
+    origin: 'https://solo-project-dev-tools.vercel.app', // Or whatever your frontend URL is
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+  }));
 
 
 server.use('/activity', RouteTrackActivity)
